@@ -1,0 +1,10 @@
+.contenedor-solicitados{
+    background-color: #B3D5F2;
+}
+.card-solicitada{
+    background-color: #66B1F2;
+}
+.cuerpo{
+    display: flex;
+    justify-content: space-around;
+}

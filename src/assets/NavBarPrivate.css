@@ -1,0 +1,32 @@
+.logo-navprivate {
+    width: 10%;
+}
+/* .contenedor-nav{
+    margin: 0%;
+    width: 100%;
+} */
+.nav-contenedor {
+    background-color: #056CF2;
+    width: 100%;
+    margin: 0%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-about-navprivate{
+    width: 30%;
+}
+.contenedor-rutas-navprivate{
+    text-align: center;
+    background-color: #0765b8;
+    width: 40%;
+}
+.boton-about{
+    color: #000;
+}
+.NLC{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.active {
+    color: white;
+}

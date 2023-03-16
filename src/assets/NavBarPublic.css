@@ -1,0 +1,25 @@
+.logo-navpublic {
+    width: 10%;
+}
+.nav-contenedor {
+    background-color: #056CF2;
+    width: 100%;
+    margin: 0%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-logo-navpublic{
+    width: 30%;
+}
+.contenedor-rutas-navpublic{
+    text-align: center;
+    background-color: #0765b8;
+    width: 30%;
+}
+.NLC{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.active {
+    color: white;
+}

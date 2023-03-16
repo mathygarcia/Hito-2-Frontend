@@ -1,0 +1,55 @@
+footer {
+    background-color: #0597F2;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-logo-span-footer {
+    border-radius: 10px;
+    background-color: #66B1F2;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.contenedor-logo-footer{
+    display: flex;
+    justify-content: center;
+}
+.logo-footer{
+    width: 50%;
+}
+
+.contenedor-links {
+    border-radius: 10px;
+    background-color: #66B1F2;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.contenedor-li-github {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
+p{
+    margin: 0%;
+}
+
+.contenedor-li-linkedin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
+
+.contenedor-li-instagram {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}

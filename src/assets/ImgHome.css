@@ -1,0 +1,41 @@
+.contenedor-img-homepage{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #66B1F2;
+}
+
+.img-homepage{
+    width: 100%;
+}
+.centrado{
+    border-radius: 10px;
+    border: #056CF2 2px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B3D5F2;
+    background-color: #0597F2;
+}
+.centrado-2{
+    border-radius: 10px;
+    border: #056CF2  2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B3D5F2;
+    background-color: #0597F2;
+}
+.centrado-3 {
+    border-radius: 10px;
+    border: #056CF2 2px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B3D5F2;
+    background-color: #0597F2;
+}

@@ -1,0 +1,15 @@
+.contenedor-jobs{
+    background-color: #B3D5F2;
+}
+.card-trabajo{
+    background-color: #66B1F2;
+    width: 100%;
+    text-align: center;
+    /* disminuir un poco al width: 70%; */
+}
+.trabajos{
+    display: grid;
+    /* aliniar con grid */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
