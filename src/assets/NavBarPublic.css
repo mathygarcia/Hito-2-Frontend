@@ -2,7 +2,10 @@
     width: 10%;
 }
 .nav-contenedor {
-    background-color: #056CF2;
+    background-color: #65647C;
+    /* background-color: #8B7E74; */
+    /* background-color: #C7BCA1; */
+    /* background-color: #056CF2; */
     width: 100%;
     margin: 0%;
     display: flex;
@@ -13,7 +16,6 @@
 }
 .contenedor-rutas-navpublic{
     text-align: center;
-    background-color: #0765b8;
     width: 30%;
 }
 .NLC{

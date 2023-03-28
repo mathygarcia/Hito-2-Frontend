@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer class="contenedor-footer py-3 border-top">
-      <div class="contenedor-logo-span-footer col-md-4 d-flex align-items-center">
+    <footer className="contenedor-footer py-3 border-top">
+      <div className="contenedor-logo-span-footer col-md-4 d-flex align-items-center">
         <a
           href="/"
-          class="contenedor-logo-footer"
+          className="contenedor-logo-footer"
         >
           <img
             className="logo-footer"
@@ -12,26 +12,26 @@ const Footer = () => {
             alt="logo-footer"
           />
         </a>
-        <span class="span-footer-company mb-3 mb-md-0 text-muted">&copy; 2023 Get a Jobs Company, Inc</span>
+        <span className="span-footer-company mb-3 mb-md-0 text-muted">&copy; 2023 Get a Jobs Company, Inc</span>
       </div>
 
-      <div class="contenedor-links">
-        <div class="contenedor-li-github">
+      <div className="contenedor-links">
+        <div className="contenedor-li-github">
           <p>Github</p>
-          <a class="text-muted" href="/">
-            <i class="fa-brands fa-github"></i>
+          <a className="text-muted" href="/">
+            <i className="fa-brands fa-github"></i>
           </a>
         </div>
-        <div class="contenedor-li-linkedin">
+        <div className="contenedor-li-linkedin">
           <p>Linkedin</p>
-          <a class="text-muted" href="/">
-            <i class="fa-brands fa-linkedin"></i>
+          <a className="text-muted" href="/">
+            <i className="fa-brands fa-linkedin"></i>
           </a>
         </div>
-        <div class="contenedor-li-instagram">
+        <div className="contenedor-li-instagram">
           <p>Instagram</p>
-          <a class="text-muted" href="/">
-            <i class="fa-brands fa-square-instagram"></i>
+          <a className="text-muted" href="/">
+            <i className="fa-brands fa-square-instagram"></i>
           </a>
         </div>
       </div>

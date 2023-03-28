@@ -1,9 +1,9 @@
 .contenedor-jobs{
-    background-color: #B3D5F2;
+    background-color: #C7BCA1;
 }
 .card-trabajo{
-    background-color: #66B1F2;
-    width: 100%;
+    background-color: #F1D3B3;
+    /* width: 100%; */
     text-align: center;
     /* disminuir un poco al width: 70%; */
 }
@@ -12,4 +12,7 @@
     /* aliniar con grid */
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+.container-views-jobs{
+    height: 100%;
 }

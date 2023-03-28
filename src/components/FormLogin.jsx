@@ -1,31 +1,68 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Alert } from "react-bootstrap";
+import { loggin } from "../api/loggin";
 import ContextOrigin from "../Context/Context";
+
 const { Context } = ContextOrigin;
-
 const FormLogin = () => {
-  const { setSession, usuarios } = useContext(Context);
-
-  const [usuario, setUsuario] = useState({});
-
+  const { setUsuarios } = useContext(Context);
+  const [user, setUsuario] = useState({ email: "", pass: "" });
   const navigate = useNavigate();
-  const login = () => {
-    const userExists =
-      usuarios.some(
-        (u) => u.email === usuario.email && u.contraseña === usuario.contraseña
-      ) || true;
-    if (userExists) {
-      setSession(usuario);
-      alert("Usuario identificado con éxito");
+  const [err, setErr] = useState({
+    ok: false,
+    error: false,
+  });
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      console.log("handleSubmint", user);
+      if (user.email === "" || user.pass === "") {
+        setErr({
+          ok: false,
+          error: true,
+        });
+        return;
+      }
+      console.log("usuario =>", user);
+      setLoading(true);
+      const { status, data } = await loggin(user);
+      const { usuario, token } = data;
+      setUsuarios({ ...usuario, token });
+      console.log("navigate");
       navigate("/Profile");
-    } else {
-      alert("Email o contraseña incorrecta");
+      if (status === 200) {
+        navigate("/Profile");
+        setErr({
+          ok: true,
+          error: false,
+        });
+      } else {
+        setErr({
+          error: true,
+          ok: false,
+        });
+      }
+      setLoading(false);
+      return;
+    } catch (error) {
+      console.log("handleSubmiterror", error);
+      setErr({ ok: false, error: true });
+      setLoading(false);
     }
   };
   return (
     <div className="contenedor-login vh-100 pt-5">
-      <Form className="w-50 mx-auto border p-3 rounded bg-primary text-white ">
+      {loading && <Alert variant="info">Cargando...</Alert>}
+      {!loading && err.ok && <Alert variant="success">acceso exitoso.</Alert>}
+      {!loading && err.error && (
+        <Alert variant="danger">datos incorrectos</Alert>
+      )}
+      <Form
+        className="form-form-login w-50 mx-auto border p-3 rounded text-white"
+        onSubmit={handleSubmit}
+      >
         <div>
           <h4>Iniciar Sesion</h4>
           <hr />
@@ -37,24 +74,22 @@ const FormLogin = () => {
             type="email"
             placeholder="Enter email"
             onChange={({ target }) =>
-              setUsuario({ ...usuario, email: target.value })
+              setUsuario({ ...user, email: target.value })
             }
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formularioContraseña">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            name="contraseña"
+            name="pass"
             type="password"
             placeholder="Password"
             onChange={({ target }) =>
-              setUsuario({ ...usuario, contraseña: target.value })
+              setUsuario({ ...user, pass: target.value })
             }
           />
         </Form.Group>
-
-        <Button variant="secondary me-3" /* type="submit" */ onClick={login}>
+        <Button variant="secondary me-3" disabled={loading} type="submit">
           iniciar sesion
         </Button>
       </Form>

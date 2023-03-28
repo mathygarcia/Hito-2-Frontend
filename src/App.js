@@ -46,10 +46,13 @@ function App() {
             <Route path="/Login" element={<SignIn />} />
             {/* privada */}
             <Route path="/Profile" element={<Profile />} />
+            {/* <Route path="/Profile/:id" element={<Profile />} /> */}
             <Route path="/Jobs" element={<Jobs />} />
             <Route path="WorkDetail/">
               <Route path=":id" element={<WorkDetail />} />
             </Route>
+            {/* <Route path="/takeJob" element={<JobsRequested />} /> */}
+            {/* <Route path="/JobsRequested/:id" element={<JobsRequested />} /> */}
             <Route path="/JobsRequested" element={<JobsRequested />} />
             <Route path="/PostJob" element={<PostJob />} />
             <Route path="*" element={<NotFound />} />

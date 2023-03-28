@@ -1,12 +1,13 @@
 footer {
-    background-color: #0597F2;
+    /* background-color: #F1D3B3; */
+    background-color: #8B7E74;
     display: flex;
     justify-content: space-around;
 }
 
 .contenedor-logo-span-footer {
     border-radius: 10px;
-    background-color: #66B1F2;
+    background-color: #a79480;
     display: flex;
     justify-content: space-around;
     width: 40%;
@@ -21,7 +22,7 @@ footer {
 
 .contenedor-links {
     border-radius: 10px;
-    background-color: #66B1F2;
+    background-color: #a79480;
     display: flex;
     justify-content: space-around;
     width: 40%;

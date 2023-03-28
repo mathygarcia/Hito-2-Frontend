@@ -1,8 +1,9 @@
 .contenedor-solicitados{
-    background-color: #B3D5F2;
+    background-color: #C7BCA1;
+    height: 100%;
 }
 .card-solicitada{
-    background-color: #66B1F2;
+    background-color: #F1D3B3;
 }
 .cuerpo{
     display: flex;

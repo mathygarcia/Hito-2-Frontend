@@ -1,23 +1,28 @@
 import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import ContextOrigin from "../Context/Context";
+import { postTrabajo } from "../api/publicarTrabajo";
 
 const { Context } = ContextOrigin;
 
 const PostTrabajo = () => {
-  const { trabajos, setTrabajos } = useContext(Context);
+  const { /* trabajos, setTrabajos, */ usuarios } = useContext(Context);
   const [trabajo, setTrabajo] = useState({});
-  const navigate = useNavigate();
 
-  const PublicarJob = () => {
-    setTrabajos([...trabajos, trabajo]);
-    alert("Trabajo publicado con exito.");
-    navigate("/Jobs");
+  const PublicarJob = async () => {
+    try {
+      const {id} = usuarios;
+      setLoading(true);
+      const res = await postTrabajo({...trabajo, usuarios_id:id});
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="contenedor-post-job vh-100 pt-5">
-      <Form className="w-50 mx-auto border p-3 rounded bg-primary text-white ">
+      <Form className="form-form-post w-50 mx-auto border p-3 rounded text-white ">
         <div>
           <h4>Informacion sobre el trabajado</h4>
           <hr />
@@ -60,6 +65,16 @@ const PostTrabajo = () => {
             }
             type="text"
             placeholder="descripcion"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>sueldo</Form.Label>
+          <Form.Control
+            onChange={({ target }) =>
+              setTrabajo({ ...trabajo, sueldo: target.value })
+            }
+            type="number"
+            placeholder="sueldo"
           />
         </Form.Group>
         <Button variant="secondary me-3" onClick={PublicarJob}>

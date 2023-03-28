@@ -1,13 +1,6 @@
-const mockPublicarTrabajo = [
-  {
-    titulo: "",
-    contacto: "",
-    email: "",
-  },
-];
-
-export const detalleTrabajo = async () => {
-  /* const res = await fetch('http://localhost:3000/WorkDetail');
-      const data = await res.jeson(); */
-  return mockPublicarTrabajo;
+import axios from "axios";
+export const postTrabajo = async (trabajo) => {
+  console.log("trabajo => ", trabajo);
+  const data = await axios.post("http://localhost:3001/PostJob", trabajo);
+  return data;
 };

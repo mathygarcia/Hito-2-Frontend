@@ -1,12 +1,10 @@
-const mockTrabajos = [
-  {
-    titulo: "",
-    descripcion: "",
-  },
-];
-
+import axios from "axios";
 export const listTrabajos = async () => {
-  /* const res = await fetch('http://localhost:3000/Jobs');
-    const data = await res.jeson(); */
-  return mockTrabajos;
-} 
+  try {
+    const res = await axios.get("http://localhost:3001/Jobs");
+    return res;
+  } catch (error) {
+    console.log("listTrabajosError", error);
+    throw new Error("no hay trabajos");
+  }
+};
