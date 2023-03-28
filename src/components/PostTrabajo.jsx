@@ -7,15 +7,14 @@ import { postTrabajo } from "../api/publicarTrabajo";
 const { Context } = ContextOrigin;
 
 const PostTrabajo = () => {
-  const { /* trabajos, setTrabajos, */ usuarios } = useContext(Context);
+  const { usuarios } = useContext(Context);
   const [trabajo, setTrabajo] = useState({});
 
   const PublicarJob = async () => {
     try {
       const {id} = usuarios;
-      setLoading(true);
       const res = await postTrabajo({...trabajo, usuarios_id:id});
-      setLoading(false);
+      console.log("res", res)
     } catch (error) {
       console.log(error);
     }
