@@ -38,6 +38,7 @@ const FormLogin = () => {
           ok: true,
           error: false,
         });
+        localStorage.setItem('token', token);
       } else {
         setErr({
           error: true,

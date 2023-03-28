@@ -28,7 +28,7 @@ const TrabajosRequested = () => {
     console.log(error);
   }
   return (
-    <div className="contenedor-solicitados vh-100 pt-5 p-4">
+    <div className="contenedor-solicitados pt-5 p-4">
       <h1>Lista De Trabajos Solicitados</h1>
       {loading && <Alert variant="info">Cargando...</Alert>}
       {!solicitados.length && (

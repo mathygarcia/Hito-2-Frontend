@@ -1,6 +1,7 @@
 import axios from "axios";
-export const takeJobEP = async (usuario_id, id) => {
-  console.log("takeJobEPIDs =>,", usuario_id, id);
-  const data = await axios.post("http://localhost:3001/takeJob", usuario_id, id);
+import {config} from './axiosConfig';
+export const takeJobEP = async (usuarios_id, id) => {
+  console.log("takeJobEP => usuaario id ,", usuarios_id, ' trabajo_id ', id);
+  const data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/takeJob`, {usuarios_id, id}, config);
   return data;
 };

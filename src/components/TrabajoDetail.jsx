@@ -7,11 +7,12 @@ import { takeJobEP } from "../api/takejobs";
 const { Context } = ContextOrigin;
 
 const TrabajoDetail = () => {
-  const { solicitados, setSolicitados, requestedId } = useContext(Context);
+  const { usuarios, solicitados, setSolicitados, requestedId } = useContext(Context);
   const navigate = useNavigate();
-  const SolicitudJob = () => {
+  const SolicitudJob = async () => {
     try {
-      takeJobEP(requestedId);
+      const data = await takeJobEP(usuarios.id, requestedId.id);
+      console.log('data => ', data)
       setSolicitados([...solicitados, requestedId]);
     navigate("/JobsRequested");
     } catch (error) {
