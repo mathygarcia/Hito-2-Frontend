@@ -28,6 +28,7 @@ const TrabajoDetail = () => {
           <Card.Text className="descripcion fw-bold mt-5">{requestedId.descripcion}</Card.Text>
           <Card.Text className=" contacto fw-bold mt-5">{requestedId.contacto}</Card.Text>
           <Card.Text className="email fw-bold mt-5">{requestedId.email}</Card.Text>
+          <Card.Text className="email fw-bold mt-5">{requestedId.sueldo}</Card.Text>
           <Button variant="secondary mt-4" onClick={SolicitudJob}>
             Solicitar trabajo
           </Button>
