@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ContextOrigin from "../Context/Context";
 import { postTrabajo } from "../api/publicarTrabajo";
 
@@ -9,11 +9,13 @@ const { Context } = ContextOrigin;
 const PostTrabajo = () => {
   const { usuarios } = useContext(Context);
   const [trabajo, setTrabajo] = useState({});
+  const navigate = useNavigate();
 
   const PublicarJob = async () => {
     try {
       const {id} = usuarios;
       const res = await postTrabajo({...trabajo, usuarios_id:id});
+      navigate("/PostJob")
       console.log("res", res)
     } catch (error) {
       console.log(error);
